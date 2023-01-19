@@ -74,3 +74,7 @@ switchMode.addEventListener('change', function () {
 		document.body.classList.remove('dark');
 	}
 })
+// let logbtn = document.getElementsByClassName("logout");
+// logbtn.addEventListener("click",()=>{
+	
+// })
