@@ -5,11 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Boxicons -->
-	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css'  rel='stylesheet'>
+	
+
 	<!-- My CSS -->
 	<link rel="stylesheet" href="dashboard.css">
+<link rel="icon" href="image\apni_dukan_logo-removebg-preview.png" type="image/x-icon">
 
-	<title>AdminHub</title>
+
+	<title>Apni Dukan</title>
 </head>
 <body>
 
@@ -18,7 +22,7 @@
 	<section id="sidebar">
 		<a href="#" class="brand">
 		
-			<span><img src="image\apni_dukan_logo-removebg-preview.png" alt=""></span>
+			<span><img id="img" src="image\apni_dukan_logo-removebg-preview.png" alt=""></span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
@@ -47,6 +51,12 @@
 			</li>
 			<li>
 				<a href="#">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Product</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
 					<i class='bx bxs-group' ></i>
 					<span class="text">Team</span>
 				</a>
@@ -60,7 +70,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#" class="logout">
+				<a href="./login.html" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Logout</span>
 				</a>
@@ -90,7 +100,7 @@
 				<span class="num">8</span>
 			</a>
 			<a href="#" class="profile">
-				<img src="img/people.png">
+				<img src="image\photo passport.jpg">
 			</a>
 		</nav>
 		<!-- NAVBAR -->
@@ -121,14 +131,14 @@
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">
 						<h3>1020</h3>
-						<p>New Order</p>
+						<p>Total Product</p>
 					</span>
 				</li>
 				<li>
-					<i class='bx bxs-group' ></i>
+					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">
 						<h3>2834</h3>
-						<p>Visitors</p>
+						<p>Total Order</p>
 					</span>
 				</li>
 				<li>
@@ -159,42 +169,42 @@
 						<tbody>
 							<tr>
 								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
+									<img src="image\photo passport.jpg">
+									<p>Kamlesh Rahane</p>
 								</td>
-								<td>01-10-2021</td>
+								<td>19-01-2023</td>
 								<td><span class="status completed">Completed</span></td>
 							</tr>
 							<tr>
 								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
+									<img src="image\WhatsApp Image 2023-01-19 at 9.25.43 AM.jpeg">
+									<p>Prabhat Gupta</p>
 								</td>
-								<td>01-10-2021</td>
+								<td>18-01-2023</td>
 								<td><span class="status pending">Pending</span></td>
 							</tr>
 							<tr>
 								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
+									<img src="image\WhatsApp Image 2023-01-19 at 9.28.53 AM.jpeg">
+									<p>Omkar Bankar</p>
 								</td>
-								<td>01-10-2021</td>
+								<td>16-01-2023</td>
 								<td><span class="status process">Process</span></td>
 							</tr>
 							<tr>
 								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
+									<img src="image\WhatsApp Image 2023-01-19 at 9.31.40 AM.jpeg">
+									<p>Saurabh Shambharkar</p>
 								</td>
-								<td>01-10-2021</td>
+								<td>11-01-2023</td>
 								<td><span class="status pending">Pending</span></td>
 							</tr>
 							<tr>
 								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
+									<img src="image\photo passport.jpg">
+									<p>Harikrishna Kelwa</p>
 								</td>
-								<td>01-10-2021</td>
+								<td>09-01-2023</td>
 								<td><span class="status completed">Completed</span></td>
 							</tr>
 						</tbody>
@@ -236,6 +246,6 @@
 	<!-- CONTENT -->
 	
 
-	<script src="script.js"></script>
+	<script src="dashboard.js"></script>
 </body>
 </html

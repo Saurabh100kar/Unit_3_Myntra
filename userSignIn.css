@@ -8,7 +8,7 @@
 
 }
 body{
-    background: #23242a;
+    background: #0c1022;
 }
  img{
    
@@ -32,7 +32,7 @@ body{
     position: relative;
     width: 380px;
     height: 420px;
-    background: #1c1c1c;
+    background: #ab0e0e;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -44,7 +44,7 @@ body{
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent,rgb(250, 122, 3), rgb(250, 122, 3));
+    background: linear-gradient(0deg, transparent,rgb(214, 190, 5), rgb(214, 190, 5));
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
 }
@@ -56,7 +56,7 @@ body{
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, rgb(250, 122, 3), rgb(250, 122, 3));
+    background: linear-gradient(0deg, transparent, rgb(214, 190, 5), rgb(214, 190, 5));
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -3s;
@@ -77,7 +77,7 @@ body{
     inset: 2px;
     border-radius: 8px;
 
-    background: #28292d;
+    background: #0c1022;
     z-index: 10;
     padding: 50px 40px;
     display: flex;
