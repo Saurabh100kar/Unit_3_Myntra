@@ -137,6 +137,13 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+}
+
 /* .mySlides {
   display: none;
 } */
@@ -228,6 +235,7 @@ body {
     font-size: 11px;
   }
 }
+
 .header div img {
   width: 51px;
   margin-left: 60px;
@@ -283,7 +291,6 @@ select:focus {
   padding-top: 5px;
   margin-left: 15px;
 }
-
 #svg {
   height: 15px;
   /* border: 1px solid red; */
