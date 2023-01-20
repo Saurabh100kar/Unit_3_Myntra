@@ -13,7 +13,8 @@
             gap: 10px;
         }
         img{
-            width: 100%;
+            height: 30%;
+            width: 80%;
         }
     </style>
 </head>
@@ -68,28 +69,28 @@ let womensData = []
             Rating.innerText = el.Rating;
 
             let buy = document.createElement("button");
-            buy.innerText = "Buy";
+            buy.innerText = "Add to Cart";
 
-            // buy.addEventListener("click", function (event) {
-            //     console.log("I am buy");
+            buy.addEventListener("click", function (event) {
+                console.log("I am buy");
 
-            //     let BuyData = JSON.parse(localStorage.getItem("buy")) || [];
-            //     let f = false;
-            //     for (let i = 0; i < BuyData.length; i++) {
-            //         if (BuyData[i].id == el.id) {
-            //             f = true;
-            //         }
-            //     }
-            //     if (f == true)
-            //         document.querySelector("#alert").innerText = "Already Placed Order";
-            //     else {
+                let BuyData = JSON.parse(localStorage.getItem("CartItem")) || [];
+                let f = false;
+                for (let i = 0; i < BuyData.length; i++) {
+                    if (BuyData[i].id == el.id) {
+                        f = true;
+                    }
+                }
+                if (f == true)
+                    alert("Already in Cart");
+                else {
 
-            //         BuyData.push(el);
-            //         localStorage.setItem("buy", JSON.stringify(BuyData));
-            //         document.querySelector("#alert").innerText = "Successfully Placed Order"
-            //     }
+                    BuyData.push(el);
+                    localStorage.setItem("CartItem", JSON.stringify(BuyData));
+                    alert("Added to Cart");
+                }
 
-            // })
+            })
 
             div.append(img, title, description, Rating, price, buy);
 
