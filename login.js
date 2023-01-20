@@ -15,10 +15,7 @@
   
     if(username == "Saurabh" && password == 123){
       window.location.assign="dashboard.html";
-    console.log("HI");
-    console.log(username);
-    console.log(password);
-      
+   
   }
   else
   console.log("error");
