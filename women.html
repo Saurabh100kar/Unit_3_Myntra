@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>women</title>
+    <style>
+        #append_here{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 10px;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="append_here">
+
+    </div>
+</body>
+
+</html>
+<script>
+
+let womensData = []
+    fetch("/women.json")
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+            // console.log(data);
+            womensData.push(data);
+            displayData(data);
+        })
+        console.log(womensData);
+
+        
+
+
+    function displayData(data) {
+
+        document.querySelector("#append_here").textContent = null;
+
+
+        data.forEach((el, i) => {
+
+            let div = document.createElement("div");
+
+            let img = document.createElement("img");
+            img.setAttribute("src", el.Image)
+
+            let title = document.createElement("h3");
+            title.innerText = el.Title;
+
+            let description = document.createElement("p");
+            description.innerText = el.Description;
+
+            let price = document.createElement("p");
+            price.innerText = el.Price;
+
+            
+            let Rating = document.createElement("p");
+            Rating.innerText = el.Rating;
+
+            let buy = document.createElement("button");
+            buy.innerText = "Buy";
+
+            // buy.addEventListener("click", function (event) {
+            //     console.log("I am buy");
+
+            //     let BuyData = JSON.parse(localStorage.getItem("buy")) || [];
+            //     let f = false;
+            //     for (let i = 0; i < BuyData.length; i++) {
+            //         if (BuyData[i].id == el.id) {
+            //             f = true;
+            //         }
+            //     }
+            //     if (f == true)
+            //         document.querySelector("#alert").innerText = "Already Placed Order";
+            //     else {
+
+            //         BuyData.push(el);
+            //         localStorage.setItem("buy", JSON.stringify(BuyData));
+            //         document.querySelector("#alert").innerText = "Successfully Placed Order"
+            //     }
+
+            // })
+
+            div.append(img, title, description, Rating, price, buy);
+
+            document.querySelector("#append_here").append(div);
+
+
+
+        })
+    }
+
+
+
+</script>
