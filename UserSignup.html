@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup</title>
+    <link rel="stylesheet" href="userSignIn.css">
+    <link rel="icon" href="image\apni_dukan_logo-removebg-preview.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="main">
+
+        <div id="img"> <img src="image\apni_dukan_logo-removebg-preview.png" alt=""></div>
+        <div class="box">
+
+            <div class="form">
+                <h2>Sign Up</h2>
+                <div class="inputBox">
+                    <input type="text" required="required" id="email" >
+                    <span>Email</span>
+                    <i></i>
+                </div>
+                <div class="inputBox">
+                    <input type="password" required="required" id="pas">
+                    <span>Password</span>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <a href="#"> Forgot Password</a>
+                    <a href="userSignIn.html"> Login</a>
+                </div>
+                <input type="submit" id="submit_btn" value="Signup">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    let data = JSON.parse(localStorage.getItem("Signupdata")) || [];
+
+    document.querySelector("#submit_btn").addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        let email = document.querySelector("#email").value;
+        let password = document.querySelector("#pas").value;
+
+        let obj = {
+            email,
+            password
+        }
+
+        data.push(obj);
+
+        localStorage.setItem("Signupdata", JSON.stringify(data));
+
+        console.log(obj);
+    });
+
+
+
+
+</script>

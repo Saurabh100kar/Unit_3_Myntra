@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="userSignIn.css">
+    <link rel="icon" href="image\apni_dukan_logo-removebg-preview.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="main">
+
+        <div id="img"> <img src="image\apni_dukan_logo-removebg-preview.png" alt=""></div>
+        <div class="box">
+
+            <div class="form">
+                <h2>Sign In</h2>
+                <div class="inputBox">
+                    <input type="text" required="required" id="username" placeholder="enter your username">
+                    <span>Username</span>
+                    <i></i>
+                </div>
+                <div class="inputBox">
+                    <input type="password" required="required" id="pass" placeholder="password">
+                    <span>Password</span>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <a href="#"> Forgot Password</a>
+                    <a href="UserSignup.html"> Signup</a>
+                </div>
+                <input type="submit" id="submit_btn" value="Login">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    //last data
+    let data = JSON.parse(localStorage.getItem("Signupdata")) || [];
+    console.log(data);
+
+    let data1 = JSON.parse(localStorage.getItem("logindata")) || [];
+
+    document.querySelector("#submit_btn").addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        let email1 = document.querySelector("#username").value;
+        let password1 = document.querySelector("#pass").value;
+
+        let obj1 = {
+            email1,
+            password1
+        }
+
+        data1.push(obj1);
+
+        localStorage.setItem("logindata", JSON.stringify(data1));
+
+        console.log(obj1);
+
+        let flag = false;
+
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].email === obj1.email1 && data[i].password === obj1.password1) {
+                flag = true;
+            }
+        }
+
+        if (flag == true) {
+            alert("Login Successfull");
+            setTimeout(() => {
+                window.location.assign("home.html");
+            }, 1000);
+        }
+        else {
+            alert("Please enter correct email or password");
+        }
+
+
+    });
+
+
+</script>
