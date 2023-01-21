@@ -72,7 +72,7 @@ tr:nth-child(even) {
     <div id="menscontainer">
         <h1>Men's product</h1>
         <p>Available items</p>
-        <h3>1000</h3>
+        <h3 id="h3menscontainer"></h3>
     </div>
     <div id="womenscontainer">
         <h1>Womens's product</h1>
@@ -130,23 +130,24 @@ tr:nth-child(even) {
    </div>
 </body>
 <script>
-    let container=document.getElementById("container")
+    fetch("https://mensdataa.onrender.com/mensdata")
+.then((res)=>{
+    return res.json();
+})
+.then((ans)=>{
+ 
+    totalwomensproduct(ans)
+})
 
-    fetch("https://myntraaa-api.onrender.com/womensdata")
-    .then((res)=>{
-        return res.json();
-    })
-    .then((ans)=>{
-    
-         let note=-Infinity;
-      ans.map(element=>{
-      if(element.id>note)
-      {
-        note=element.id;
-      }
-      })
-      console.log(note)
-    })
+function totalwomensproduct(data){
+    let count=0;
+    for(let i=0;i<data.length;i++){
+        count++;
+    }
+    let totalproduct=document.getElementById("h3menscontainer");
+    totalproduct.append(count);
+}
+
 
 // fetch("https://myntraaa-api.onrender.com/womensdata")
 // .then(res => res.json())
