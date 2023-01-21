@@ -1,7 +1,8 @@
+
 let label = document.getElementById("label");
 let ShoppingCart = document.getElementById("shopping-cart");
 
-let basket = JSON.parse(localStorage.getItem("data")) || [];
+let basket = JSON.parse(localStorage.getItem("BuyData")) || [];
 
 let calculation = () => {
   let cartIcon = document.getElementById("cartAmount");
@@ -18,12 +19,12 @@ let generateCartItems = () => {
         let search = shopItemsData.find((y) => y.id === id) || [];
         return `
       <div class="cart-item">
-        <img width="100" src=${search.img} alt="" />
+        <img width="100" src=${search.Image} alt="" />
         <div class="details">
           <div class="title-price-x">
               <h4 class="title-price">
-                <p>${search.name}</p>
-                <p class="cart-item-price">$ ${search.price}</p>
+                <p>${search.Title}</p>
+                <p class="cart-item-price">$ ${search.Price}</p>
               </h4>
               <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
           </div>
@@ -32,7 +33,7 @@ let generateCartItems = () => {
               <div id=${id} class="quantity">${item}</div>
               <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
           </div>
-          <h3>$ ${item * search.price}</h3>
+          <h3>$ ${item * search.Price}</h3>
         </div>
       </div>
       `;
@@ -66,7 +67,7 @@ let increment = (id) => {
 
   generateCartItems();
   update(selectedItem.id);
-  localStorage.setItem("data", JSON.stringify(basket));
+  localStorage.setItem("BuyData", JSON.stringify(basket));
 };
 let decrement = (id) => {
   let selectedItem = id;
@@ -80,7 +81,7 @@ let decrement = (id) => {
   update(selectedItem.id);
   basket = basket.filter((x) => x.item !== 0);
   generateCartItems();
-  localStorage.setItem("data", JSON.stringify(basket));
+  localStorage.setItem("BuyData", JSON.stringify(basket));
 };
 
 let update = (id) => {
@@ -97,13 +98,13 @@ let removeItem = (id) => {
   basket = basket.filter((x) => x.id !== selectedItem.id);
   generateCartItems();
   TotalAmount();
-  localStorage.setItem("data", JSON.stringify(basket));
+  localStorage.setItem("BuyData", JSON.stringify(basket));
 };
 
 let clearCart = () => {
   basket = [];
   generateCartItems();
-  localStorage.setItem("data", JSON.stringify(basket));
+  localStorage.setItem("BuyData", JSON.stringify(basket));
 };
 let paymet_page = () =>{
     location.href = "payment.html"
