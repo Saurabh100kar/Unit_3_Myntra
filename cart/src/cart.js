@@ -42,7 +42,7 @@ let generateCartItems = () => {
     ShoppingCart.innerHTML = ``;
     label.innerHTML = `
     <h2>Cart is Empty</h2>
-    <a href="index.html">
+    <a href="wishlist.html">
       <button class="HomeBtn">Back to home</button>
     </a>
     `;
@@ -105,6 +105,9 @@ let clearCart = () => {
   generateCartItems();
   localStorage.setItem("data", JSON.stringify(basket));
 };
+let paymet_page = () =>{
+    location.href = "payment.html"
+}
 
 let TotalAmount = () => {
   if (basket.length !== 0) {
@@ -119,7 +122,7 @@ let TotalAmount = () => {
     // console.log(amount);
     label.innerHTML = `
     <h2>Total Bill : $ ${amount}</h2>
-    <button class="checkout">Checkout</button>
+    <button onclick="paymet_page()" class="checkout">Checkout</button>
     <button onclick="clearCart()" class="removeAll">Clear Cart</button>
     `;
   } else return;
