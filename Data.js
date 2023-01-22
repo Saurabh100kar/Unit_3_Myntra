@@ -1,2 +1,2 @@
-let mensData = localStorage.getItem("WishItem")
-let shopItemsData = mensData
+
+let shopItemsData = JSON.parse(localStorage.getItem("WishItem"))

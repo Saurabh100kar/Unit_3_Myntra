@@ -2,14 +2,15 @@
 let label = document.getElementById("label");
 let ShoppingCart = document.getElementById("shopping-cart");
 
-let basket = JSON.parse(localStorage.getItem("BuyData")) || [];
+let basket = JSON.parse(localStorage.getItem("BuyItem")) || [];
 
-let calculation = () => {
+console.log(basket)
+let cartItem = basket.length
+
   let cartIcon = document.getElementById("cartAmount");
-  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
-};
+  cartIcon.innerHTML = cartItem
 
-calculation();
+
 
 let generateCartItems = () => {
   if (basket.length !== 0) {
@@ -24,16 +25,12 @@ let generateCartItems = () => {
           <div class="title-price-x">
               <h4 class="title-price">
                 <p>${search.Title}</p>
-                <p class="cart-item-price">$ ${search.Price}</p>
+                
               </h4>
               <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
           </div>
-          <div class="buttons">
-              <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
-              <div id=${id} class="quantity">${item}</div>
-              <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
-          </div>
-          <h3>$ ${item * search.Price}</h3>
+          <p>${search.Description}
+          <h3>$ ${search.Price}</h3>
         </div>
       </div>
       `;
@@ -67,7 +64,7 @@ let increment = (id) => {
 
   generateCartItems();
   update(selectedItem.id);
-  localStorage.setItem("BuyData", JSON.stringify(basket));
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 let decrement = (id) => {
   let selectedItem = id;
@@ -81,7 +78,7 @@ let decrement = (id) => {
   update(selectedItem.id);
   basket = basket.filter((x) => x.item !== 0);
   generateCartItems();
-  localStorage.setItem("BuyData", JSON.stringify(basket));
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 
 let update = (id) => {
@@ -98,35 +95,26 @@ let removeItem = (id) => {
   basket = basket.filter((x) => x.id !== selectedItem.id);
   generateCartItems();
   TotalAmount();
-  localStorage.setItem("BuyData", JSON.stringify(basket));
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 
 let clearCart = () => {
   basket = [];
   generateCartItems();
-  localStorage.setItem("BuyData", JSON.stringify(basket));
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 let paymet_page = () =>{
     location.href = "payment.html"
 }
+let sum =0;
+for(let i=0;i<basket.length;i++){
+  sum +=i.Price  
+  }
 
-let TotalAmount = () => {
-  if (basket.length !== 0) {
-    let amount = basket
-      .map((x) => {
-        let { item, id } = x;
-        let search = shopItemsData.find((y) => y.id === id) || [];
-
-        return item * search.price;
-      })
-      .reduce((x, y) => x + y, 0);
-    // console.log(amount);
     label.innerHTML = `
-    <h2>Total Bill : $ ${amount}</h2>
+    <h2>Total Bill : $ ${sum}</h2>
     <button onclick="paymet_page()" class="checkout">Checkout</button>
     <button onclick="clearCart()" class="removeAll">Clear Cart</button>
     `;
-  } else return;
-};
+  
 
-TotalAmount();
