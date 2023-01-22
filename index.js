@@ -1,5 +1,6 @@
 
-
+let cartIcon = document.getElementById("cartAmount");
+cartIcon.innerHTML = cartItem
 function dropDown1() {
     let content = document.querySelector(".dropdown-content1");
 
