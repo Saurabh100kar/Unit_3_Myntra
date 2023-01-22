@@ -1,14 +1,16 @@
+
 let label = document.getElementById("label");
 let ShoppingCart = document.getElementById("shopping-cart");
 
-let basket = JSON.parse(localStorage.getItem("data")) || [];
+let basket = JSON.parse(localStorage.getItem("BuyItem")) || [];
 
-let calculation = () => {
+console.log(basket)
+let cartItem = basket.length
+
   let cartIcon = document.getElementById("cartAmount");
-  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
-};
+  cartIcon.innerHTML = cartItem
 
-calculation();
+
 
 let generateCartItems = () => {
   if (basket.length !== 0) {
@@ -18,21 +20,17 @@ let generateCartItems = () => {
         let search = shopItemsData.find((y) => y.id === id) || [];
         return `
       <div class="cart-item">
-        <img width="100" src=${search.img} alt="" />
+        <img width="100" src=${search.Image} alt="" />
         <div class="details">
           <div class="title-price-x">
               <h4 class="title-price">
-                <p>${search.name}</p>
-                <p class="cart-item-price">$ ${search.price}</p>
+                <p>${search.Title}</p>
+                
               </h4>
               <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
           </div>
-          <div class="buttons">
-              <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
-              <div id=${id} class="quantity">${item}</div>
-              <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
-          </div>
-          <h3>$ ${item * search.price}</h3>
+          <p>${search.Description}
+          <h3>$ ${search.Price}</h3>
         </div>
       </div>
       `;
@@ -42,7 +40,7 @@ let generateCartItems = () => {
     ShoppingCart.innerHTML = ``;
     label.innerHTML = `
     <h2>Cart is Empty</h2>
-    <a href="wishlist.html">
+    <a href="index.html">
       <button class="HomeBtn">Back to home</button>
     </a>
     `;
@@ -108,24 +106,15 @@ let clearCart = () => {
 let paymet_page = () =>{
     location.href = "payment.html"
 }
+let sum =0;
+for(let i=0;i<basket.length;i++){
+  sum +=i.Price  
+  }
 
-let TotalAmount = () => {
-  if (basket.length !== 0) {
-    let amount = basket
-      .map((x) => {
-        let { item, id } = x;
-        let search = shopItemsData.find((y) => y.id === id) || [];
-
-        return item * search.price;
-      })
-      .reduce((x, y) => x + y, 0);
-    // console.log(amount);
     label.innerHTML = `
-    <h2>Total Bill : $ ${amount}</h2>
+    <h2>Total Bill : $ ${sum}</h2>
     <button onclick="paymet_page()" class="checkout">Checkout</button>
     <button onclick="clearCart()" class="removeAll">Clear Cart</button>
     `;
-  } else return;
-};
+  
 
-TotalAmount();

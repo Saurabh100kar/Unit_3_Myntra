@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mystore</title>
+    <style>
+       
+        *{
+            background: #feeefa;
+        }
+        #container div{
+            width: 60%;
+            padding: 0px 40px 0px 0px;
+        }
+        #container div>h1{
+            color: rgb(60, 26, 199);
+            text-align: center;
+            
+        }
+        #container div>h3{
+            color: rgb(246, 4, 32);
+            text-align: center;
+        }
+        #container{
+            display: flex;
+            width: 80%;
+            margin: auto;
+            justify-content:space-between;
+        }
+        #menscontainer{
+         background: #baf7f1;
+         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        #womenscontainer{
+            background: #9ae28d;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        #kidscontainer{
+            background: #baf7f1;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+
+        /-------- payment details -------------/
+        #paymentdetails{
+            margin: auto;
+            width: 70%;
+            align-items: center;
+            font-size:23px;
+        }
+        *{
+            background: rgb(6, 190, 197);
+        }
+        body img{
+            width:10%;
+  
+}
+table, th, td {
+  border: 1px solid black;
+}
+tr:nth-child(even) {
+  background-color: #741cdf;
+}
+
+    </style>
+</head>
+<body>
+    
+    <img src="./apni_dukan_logo-removebg-preview.png" alt="">
+   <div id="container">
+    <div id="menscontainer">
+        <h1>Men's product</h1>
+        <p>Available items</p>
+        <h3 id="h3menscontainer"></h3>
+    </div>
+    <div id="womenscontainer">
+        <h1>Womens's product</h1>
+        <p>Available items</p>
+        <h3>500</h3>
+    </div>
+    <div id="kidscontainer"> 
+        <h1>kids's product</h1>
+        <p>Available items</p>
+        <h3>600</h3>
+    </div>
+
+   </div>
+
+   <!-------------- Payment details----------- -->
+
+   <div id="paymentdetails">
+    <h1>Payment Details</h1>
+     <table>
+        <thead>
+            <th>Product name</th>
+            <th>Product id</th>
+            <th>Payment Status</th>
+        </thead>
+        <tbody>
+            <tr>
+            <td>Shirt</td>
+            <td>101</td>
+            <td>Done</td>
+            </tr>
+            <tr>
+                <td>T-Shirt</td>
+                <td>102</td>
+                <td>Done</td>
+                </tr>
+                <tr>
+                    <td>Jacket</td>
+                    <td>103</td>
+                    <td>Due</td>
+                    </tr>
+                    <tr>
+                        <td>Shorts</td>
+                        <td>104</td>
+                        <td>Pending</td>
+                        </tr>
+
+                     <tr>
+            <td>Shirt</td>
+            <td>102</td>
+            <td>Done</td>
+            </tr>   
+        </tbody>
+     </table>
+
+   </div>
+</body>
+<script>
+    fetch("https://mensdataa.onrender.com/mensdata")
+.then((res)=>{
+    return res.json();
+})
+.then((ans)=>{
+ 
+    totalwomensproduct(ans)
+})
+
+function totalwomensproduct(data){
+    let count=0;
+    for(let i=0;i<data.length;i++){
+        count++;
+    }
+    let totalproduct=document.getElementById("h3menscontainer");
+    totalproduct.append(count);
+}
+
+
+</script>
+</html>

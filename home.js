@@ -1,5 +1,4 @@
 
-
 function dropDown1() {
     let content = document.querySelector(".dropdown-content1");
 
@@ -114,4 +113,3 @@ function dropDown5() {
     });
 }
 dropDown5();
-
