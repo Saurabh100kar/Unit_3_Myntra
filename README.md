@@ -5,15 +5,15 @@ Team name - Unique Designer
 
 Our Team Members
 
- 1  Saurabh Shambharkar 
+ 1.  Saurabh Shambharkar 
  
- 2  Hari Krishna kelwa
+ 2.  Hari Krishna kelwa
  
- 3  Omkar Bankar 
+ 3.  Omkar Bankar 
  
- 4  Kamlesh Rahane 
+ 4.  Kamlesh Rahane 
  
- 5  Prabhat kumar Gupta
+ 5.  Prabhat kumar Gupta
  
 
  Netlify link = https://guileless-macaron-8275ae.netlify.app/index.html
