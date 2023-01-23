@@ -2,19 +2,24 @@
 
 Team name - Unique Designer
 
+
 Our Team Members
+
  1  Saurabh Shambharkar 
  2  Hari Krishna kelwa
  3  Omkar Bankar 
  4  Kamlesh Rahane 
  5  Prabhat kumar Gupta
+ 
 
  Netlify link = https://guileless-macaron-8275ae.netlify.app/index.html
  
+ 
 Website detail:
-Apni Dukan is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Myntra aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal.
+Apni Dukan is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Apni Dukan aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal.
 
 You can see the landing page screenshot below
+
 ![Screenshot (131)](https://user-images.githubusercontent.com/101566192/213992192-a39d072d-2e95-4e87-b621-6b4d895d2a09.png)
 
 here you can see the mens page screeshot 
@@ -33,7 +38,6 @@ here you can see the cart page screeshot
 here you can see the payment page screeshot 
 
 ![Screenshot (205)](https://user-images.githubusercontent.com/101566192/213993250-85cd8da8-7890-4bbf-8a89-4191d4c68c62.png)
-
 
 here you can see the user signup page screenshot 
 
